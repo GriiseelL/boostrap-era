@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT book_id, book_name, publication_year, author.author_name FROM book JOIN author ON book.author_id = author.author_id";
+$sql = "SELECT author_id, author_name FROM author";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -32,7 +32,7 @@ $conn->close();
     }
 
     button{
-      margin-left: 40px;
+        margin-left: 40px;
     }
 
   </style>
@@ -65,9 +65,9 @@ $conn->close();
   <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Id buku</th>
-      <th scope="col">Judul buku</th>
-      <th scope="col">Tahun terbit</th>
+      <th scope="col">Id</th>
+      <!-- <th scope="col">Judul buku</th> -->
+      <!-- <th scope="col">Tahun terbit</th> -->
       <th scope="col">Penulis</th>
     </tr>
   </thead>
@@ -78,15 +78,14 @@ $conn->close();
   ?>
     <tr>
       <th scope="row">1</th>
-      <td><?php echo $row["book_id"]?></td>
-      <td><?php echo $row["book_name"]?></td>
-      <td><?php echo $row["publication_year"]?></td>
+      <td><?php echo $row["author_id"]?></td>
       <td><?php echo $row["author_name"]?></td>
     </tr>
     <?php } ?>
   </tbody>
 </table>
-<button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD Buku</button>
+<br>
+<button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD author</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
