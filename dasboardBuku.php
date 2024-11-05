@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT book_id, book_name, publication_year, author.author_name FROM book JOIN author ON book.author_id = author.author_id";
+$sql = "SELECT book_id, book_name, publication_year, author.author_name FROM book  LEFT JOIN author ON book.author_id = author.author_id";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -86,7 +86,7 @@ $conn->close();
     <?php } ?>
   </tbody>
 </table>
-<button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD Buku</button>
+<a href="insertBuku.php"><button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD Buku</button></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

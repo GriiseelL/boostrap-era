@@ -61,7 +61,7 @@ $conn->close();
     </div>
   </div>
 </nav> <br>
-<table class="table table-bordered">
+<table class="table table-bordered" style="width: 50%">
   <thead>
     <tr>
       <th scope="col">No</th>
