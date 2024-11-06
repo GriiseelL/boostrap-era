@@ -1,4 +1,14 @@
 <?php
+
+session_start(); 
+
+if (!isset($_SESSION['email'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -52,7 +62,7 @@ $conn->close();
           <a class="nav-link" href="dasboardAuthor.php">Author</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="actionLogout.php">Logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -69,6 +79,7 @@ $conn->close();
       <th scope="col">Judul buku</th>
       <th scope="col">Tahun terbit</th>
       <th scope="col">Penulis</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -82,6 +93,7 @@ $conn->close();
       <td><?php echo $row["book_name"]?></td>
       <td><?php echo $row["publication_year"]?></td>
       <td><?php echo $row["author_name"]?></td>
+      <td>edit/</td>
     </tr>
     <?php } ?>
   </tbody>

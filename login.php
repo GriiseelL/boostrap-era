@@ -1,3 +1,12 @@
+<?php
+session_start(); 
+
+if (isset($_SESSION['email'])) { 
+
+ header("Location: dasboardBuku.php"); 
+
+} 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,7 +47,7 @@ height: 100%;
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="actionLogin.php" method="post ">
+        <form action="actionLogin.php" method="post">
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
             <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
@@ -84,8 +93,9 @@ height: 100%;
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-          <a href="dasboardBuku.php"><button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button></a>
+            <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">ssss</button>
+            
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
                 class="link-danger">Register</a></p>
           </div>

@@ -133,7 +133,7 @@
   <body>
     <div class="main-block">
       <h1>Registration</h1>
-      <form action="/">
+      <form action="actionRegis.php" method="post">
         <hr>
         <!-- <div class="account-type">
           <input type="radio" value="none" id="radioOne" name="account" checked/>
@@ -143,11 +143,11 @@
         </div> -->
         <hr>
         <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
+        <input type="text" name="email" id="name" placeholder="Email" required/>
         <label id="icon" for="name"><i class="fas fa-user"></i></label>
         <input type="text" name="name" id="name" placeholder="Name" required/>
         <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
+        <input type="password" name="password" id="name" placeholder="Password" required/>
         <hr>
         <!-- <div class="gender">
           <input type="radio" value="none" id="male" name="gender" checked/>

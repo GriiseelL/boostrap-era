@@ -1,4 +1,13 @@
 <?php
+
+session_start(); 
+
+if (!isset($_SESSION['email'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -52,7 +61,7 @@ $conn->close();
           <a class="nav-link" href="dasboardAuthor.php">Author</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="actionLogin.php">Logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -85,7 +94,7 @@ $conn->close();
   </tbody>
 </table>
 <br>
-<button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD author</button>
+<a href="insertAuthor.php"><button type="button" class="btn btn-dark btn-lg"  style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD Buku</button></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
