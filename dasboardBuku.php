@@ -74,7 +74,7 @@ $conn->close();
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">No</th>
+      <!-- <th scope="col">No</th> -->
       <th scope="col">Id buku</th>
       <th scope="col">Judul buku</th>
       <th scope="col">Tahun terbit</th>
@@ -85,15 +85,19 @@ $conn->close();
   <tbody>
     <?php
   while($row = $result->fetch_assoc()) {
-  
+  $book = $row['book_id'];
+
   ?>
     <tr>
-      <th scope="row">1</th>
+      <!-- <th scope="row">1</th> -->
       <td><?php echo $row["book_id"]?></td>
       <td><?php echo $row["book_name"]?></td>
       <td><?php echo $row["publication_year"]?></td>
       <td><?php echo $row["author_name"]?></td>
-      <td>edit/</td>
+      <td>
+        <a href="editB.php?book_id=<?php echo $book?>">edit</a>
+        <a href=".php?author_id=<?php echo $author?>">delete</a>
+      </td>
     </tr>
     <?php } ?>
   </tbody>

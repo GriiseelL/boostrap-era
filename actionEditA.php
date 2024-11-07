@@ -1,10 +1,10 @@
 <?php
-$author= $_POST['buku'];
+$author= $_POST['author'];
 
 $servername="localhost";
 $username="root";
 $password="";
-$database="web1";
+$database="buku";
 $conn = new mysqli($servername, $username, $password, $database );
 
 if ($conn->connect_error) {
@@ -13,12 +13,13 @@ if ($conn->connect_error) {
 
 $id = $_GET['author_id'];
 
-$sql = "UPDATE author SET author_name='$author' WHERE author_id='$id'";
-$query = mysqli_query($db, $sql);
+$sql = $conn->query("UPDATE author SET author_name='$author' WHERE author_id='$id'");
 
- if( $query ) {
-        // kalau berhasil alihkan ke halaman list-siswa.php
-        header('Location: edit.php');
- }else {
+
+ if ($sql === TRUE) {
+    echo "New record created successfully";
+    header ("Location: dasboardAuthor.php");
+  } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
+  

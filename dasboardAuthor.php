@@ -73,7 +73,7 @@ $conn->close();
 <table class="table table-bordered" style="width: 50%">
   <thead>
     <tr>
-      <th scope="col">No</th>
+      <!-- <th scope="col">No</th> -->
       <th scope="col">Id</th>
       <!-- <th scope="col">Judul buku</th> -->
       <!-- <th scope="col">Tahun terbit</th> -->
@@ -87,11 +87,13 @@ $conn->close();
   $author= $row["author_id"];
   ?>
     <tr>
-      <th scope="row">1</th>
+      <!-- <th scope="row"></th> -->
       <td><?php echo $row["author_id"]?></td>
       <td><?php echo $row["author_name"]?></td>
       <td>
-        <a href="edit.php?author_id=<?php echo $author?>">edit</td></a>
+        <a href="edit.php?author_id=<?php echo $author?>">edit</a>
+        <a href="delete.php?author_id=<?php echo $author?>" onclick="return confirm('Are you sure?')">delete</a>
+      </td>
     </tr>
     <?php } ?>
   </tbody>

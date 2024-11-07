@@ -10,7 +10,7 @@
 
   </style>
   <body>
-    <h2 style="font-family: 'Times New Roman', Times, serif; text-align: center;">TAMBAHKAN JUDUL AUTHOR BARU</h2>
+    <h2 style="font-family: 'Times New Roman', Times, serif; text-align: center;">TAMBAHKAN AUTHOR BARU</h2>
     <br>
 
 <?php
@@ -26,21 +26,21 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$author_id = $_GET["author_id"];
+$buku_id = $_GET["book_id"];
 
-$sql = "SELECT * FROM author WHERE author_id='$author_id'";
+$sql = $conn->query("SELECT * FROM book WHERE book_id='$buku_id'");
 foreach ($sql as $dt) {
 
 $conn->close();
 ?>
-    <form action="actionEdit.php?author_id=<?php echo $author_id?>" method="post">
+    <form action="actionEditB.php?book_id=<?php echo $book_id?>" method="post">
     <div class="input-group flex-nowrap" style="margin-left: 30px;">
          <span class="input-group-text" id="addon-wrapping">tambahkan author</span>
-         <input type="text" class="form-control" value="<?php echo $dt ['author_name']?>" name="author" placeholder="input author" aria-label="Username" aria-describedby="addon-wrapping">
+         <input type="text" class="form-control" value="<?php echo $dt ['book_name']?>" name="buku" placeholder="input author" aria-label="Username" aria-describedby="addon-wrapping">
     </div> 
 <?php } ?>
     <br>
-        <button type="submit" class="btn btn-dark btn-lg"  style="margin-left: 40px; --bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">ADD</button>
+        <button type="submit" class="btn btn-dark btn-lg"  style="margin-left: 40px; --bs-btn-padding-y: 10px; --bs-btn-padding-x: 80px; --bs-btn-font-size: 15px;">UPDATE</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
