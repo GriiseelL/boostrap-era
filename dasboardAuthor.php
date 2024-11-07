@@ -78,17 +78,20 @@ $conn->close();
       <!-- <th scope="col">Judul buku</th> -->
       <!-- <th scope="col">Tahun terbit</th> -->
       <th scope="col">Penulis</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
     <?php
   while($row = $result->fetch_assoc()) {
-  
+  $author= $row["author_id"];
   ?>
     <tr>
       <th scope="row">1</th>
       <td><?php echo $row["author_id"]?></td>
       <td><?php echo $row["author_name"]?></td>
+      <td>
+        <a href="edit.php?author_id=<?php echo $author?>">edit</td></a>
     </tr>
     <?php } ?>
   </tbody>
